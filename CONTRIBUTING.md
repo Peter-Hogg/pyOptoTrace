@@ -6,12 +6,13 @@ easiest to review.
 ## Development setup
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev]"
-pytest
-ruff check src tests examples
+uv sync
+uv run pytest
+uv run ruff check src tests examples
 ```
+
+When dependencies change, run `uv lock` and commit `uv.lock` with the corresponding
+`pyproject.toml` change. Use `uv build` to create the wheel and source distribution.
 
 ## Pull requests
 

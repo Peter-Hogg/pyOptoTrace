@@ -35,37 +35,41 @@ pyOptoTrace currently targets Python 3.10–3.12.
 ```bash
 git clone <your-future-repository-url>
 cd pyOptoTrace
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e ".[dev]"
-pytest
+uv sync
+uv run pytest
+uv run ruff check src tests examples
 ```
 
-Install only the extras needed for a workflow:
+`uv sync` creates `.venv`, installs pyOptoTrace in editable mode, and installs the default
+development dependency group from the committed lockfile.
+
+Add only the optional dependencies needed for a workflow:
 
 ```bash
 # File formats and NWB
-python -m pip install -e ".[io]"
+uv sync --extra io
 
 # Wavelets and Pynapple session objects
-python -m pip install -e ".[analysis]"
+uv sync --extra analysis
 
 # Plotting helpers and MP4 export
-python -m pip install -e ".[visualization]"
+uv sync --extra visualization
 
 # CUDA/JAX and motion-correction paths
-python -m pip install -e ".[gpu,motion]"
+uv sync --extra gpu --extra motion --extra io
 ```
 
 CuPy and JAX wheels depend on the local CUDA/driver combination. Check their installation
 guides before selecting a GPU extra on a new workstation.
+
+Standard Python installers remain supported for users who install a future release from PyPI.
 
 ## Quick start
 
 Run the self-contained command-line demo:
 
 ```bash
-pyoptotrace demo
+uv run pyoptotrace demo
 ```
 
 Or detect spikes in a trace:

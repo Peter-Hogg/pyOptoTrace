@@ -25,9 +25,10 @@
 
 ## Software quality
 
-- [ ] Run tests on Python 3.10, 3.11, and 3.12.
+- [ ] Run `uv sync --locked` and `uv run pytest` on Python 3.10, 3.11, and 3.12.
 - [ ] Test optional dependency groups on clean CPU and CUDA machines.
-- [ ] Build and inspect both wheel and source distribution.
+- [ ] Run `uv build` and inspect both the wheel and source distribution.
+- [ ] Confirm `uv lock --check` succeeds and `uv.lock` is committed.
 - [ ] Add API documentation and one end-to-end tutorial.
 - [ ] Replace print-based progress and diagnostics with logging where appropriate.
 - [ ] Tag `v0.1.0` only after the alpha warnings match actual support.

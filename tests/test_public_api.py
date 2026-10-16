@@ -1,10 +1,10 @@
 import numpy as np
 
-import lumembrane
+import pyoptotrace
 
 
 def test_version_is_pre_release():
-    assert lumembrane.__version__ == "0.1.0a0"
+    assert pyoptotrace.__version__ == "0.1.0a0"
 
 
 def test_detect_peaks_finds_synthetic_events():
@@ -12,7 +12,7 @@ def test_detect_peaks_finds_synthetic_events():
     expected = np.array([100, 400, 800])
     trace[expected] = 10.0
 
-    detected = lumembrane.detect_peaks(
+    detected = pyoptotrace.detect_peaks(
         trace,
         fs=1_000,
         threshold_std=4.0,
@@ -27,7 +27,7 @@ def test_spike_triggered_average_uses_sample_aligned_time_axis():
     peaks = np.array([50, 100, 150])
     trace[peaks] = 3.0
 
-    time_ms, mean, sem, snippets = lumembrane.spike_triggered_average(
+    time_ms, mean, sem, snippets = pyoptotrace.spike_triggered_average(
         trace,
         peaks,
         window_ms=(-2, 3),

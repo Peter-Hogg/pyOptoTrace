@@ -1,6 +1,6 @@
 # Security policy
 
-Lumembrane has not yet made a stable release. Security fixes are applied only to the newest
+pyOptoTrace has not yet made a stable release. Security fixes are applied only to the newest
 pre-release branch.
 
 Please do not open a public issue for a suspected vulnerability or accidental disclosure. Use

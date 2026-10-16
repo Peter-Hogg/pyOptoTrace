@@ -1,6 +1,6 @@
 import numpy as np
 
-from lumembrane import fit_bleach_curve
+from pyoptotrace import fit_bleach_curve
 
 
 def test_monoexponential_bleach_fit_recovers_curve():

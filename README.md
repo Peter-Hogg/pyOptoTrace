@@ -1,8 +1,8 @@
-# Lumembrane
+# pyOptoTrace
 
 > From fluorescence movies to membrane-voltage traces.
 
-Lumembrane is a Python toolkit for exploratory functional-imaging workflows. It collects
+pyOptoTrace is a Python toolkit for exploratory functional-imaging workflows. It collects
 reusable code for loading Luminos acquisitions, correcting fluorescence traces, extracting
 ROI signals, detecting spikes, building kymographs, and exporting compatible data to NWB.
 
@@ -11,7 +11,7 @@ not contain raw recordings, subject identifiers, private paths, notebook outputs
 original repository history.
 
 > [!IMPORTANT]
-> Lumembrane is pre-release research software. Its API may change, results still require
+> pyOptoTrace is pre-release research software. Its API may change, results still require
 > scientific validation, and it must not be used for clinical decisions.
 
 ## What is included
@@ -30,11 +30,11 @@ in this repository use synthetic data instead.
 
 ## Install for development
 
-Lumembrane currently targets Python 3.10–3.12.
+pyOptoTrace currently targets Python 3.10–3.12.
 
 ```bash
 git clone <your-future-repository-url>
-cd lumembrane
+cd pyOptoTrace
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e ".[dev]"
@@ -65,7 +65,7 @@ guides before selecting a GPU extra on a new workstation.
 Run the self-contained command-line demo:
 
 ```bash
-lumembrane demo
+pyoptotrace demo
 ```
 
 Or detect spikes in a trace:
@@ -73,7 +73,7 @@ Or detect spikes in a trace:
 ```python
 import numpy as np
 
-from lumembrane import detect_peaks, spike_triggered_average
+from pyoptotrace import detect_peaks, spike_triggered_average
 
 sampling_rate = 1_000.0
 trace = np.load("trace.npy")
@@ -120,7 +120,7 @@ git diff --cached
 ```
 
 Use a dedicated data store and pass paths at runtime. For batch processing, set
-`LUMEMBRANE_ARCHIVE` and `LUMEMBRANE_SCRATCH`; no researcher-specific path is built into the
+`PYOPTOTRACE_ARCHIVE` and `PYOPTOTRACE_SCRATCH`; no researcher-specific path is built into the
 package.
 
 ## Project status and release path
@@ -129,8 +129,8 @@ The current version is `0.1.0a0`. Before publishing, work through
 [`docs/release-checklist.md`](docs/release-checklist.md), especially provenance review,
 validation on shareable data, GPU installation testing, and formal name/trademark clearance.
 
-The working name **Lumembrane** combines “lumen” and “membrane.” It is provisional until that
-clearance is complete.
+The working name **pyOptoTrace** reflects Python tooling for optical physiology traces. It remains
+provisional until formal name and trademark clearance is complete.
 
 ## Contributing
 

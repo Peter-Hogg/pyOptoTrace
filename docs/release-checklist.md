@@ -2,7 +2,7 @@
 
 ## Identity and ownership
 
-- [ ] Perform formal trademark and package-name clearance for “Lumembrane.”
+- [ ] Perform formal trademark and package-name clearance for “pyOptoTrace.”
 - [ ] Reserve the repository name and package name only after choosing the final identity.
 - [ ] Confirm the copyright owner and whether institutional review is required.
 - [ ] Resolve every item in `THIRD_PARTY_NOTICES.md`.

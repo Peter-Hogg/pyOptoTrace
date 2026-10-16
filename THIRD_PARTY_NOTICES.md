@@ -1,6 +1,6 @@
 # Third-party and provenance review
 
-Lumembrane depends on third-party Python packages, but does not vendor them. Their licenses apply
+pyOptoTrace depends on third-party Python packages, but does not vendor them. Their licenses apply
 when installed and should be reviewed before redistribution in a bundled application.
 
 Two source modules also contain explicit method/provenance notes inherited from the research

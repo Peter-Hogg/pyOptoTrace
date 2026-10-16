@@ -1,6 +1,6 @@
 import json
 
-from lumembrane.cli import main
+from pyoptotrace.cli import main
 
 
 def test_demo_is_deterministic(capsys):

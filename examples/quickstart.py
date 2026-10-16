@@ -1,8 +1,8 @@
-"""Synthetic Lumembrane quick start; no private or experimental data required."""
+"""Synthetic pyOptoTrace quick start; no private or experimental data required."""
 
 import numpy as np
 
-from lumembrane import detect_peaks, estimate_firing_rate, spike_triggered_average
+from pyoptotrace import detect_peaks, estimate_firing_rate, spike_triggered_average
 
 
 def main() -> None:

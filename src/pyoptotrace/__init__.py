@@ -1,4 +1,4 @@
-"""Lumembrane: tools for functional fluorescence imaging analysis."""
+"""pyOptoTrace: tools for functional fluorescence imaging analysis."""
 
 from .bleach_correction import correct_bleaching, fit_bleach_curve
 from .camp_preprocess import deltaFOverF0_camp

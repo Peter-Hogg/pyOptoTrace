@@ -48,9 +48,9 @@ from . import helpers, luminos_preprocess
 from . import luminos_io as lio
 
 # ── Storage configuration ───────────────────────────────────────────────────
-ARCHIVE_ROOT = Path(os.environ.get("LUMEMBRANE_ARCHIVE", "/data")).expanduser()
+ARCHIVE_ROOT = Path(os.environ.get("PYOPTOTRACE_ARCHIVE", "/data")).expanduser()
 SCRATCH_ROOT = Path(
-    os.environ.get("LUMEMBRANE_SCRATCH", Path.home() / ".cache" / "lumembrane")
+    os.environ.get("PYOPTOTRACE_SCRATCH", Path.home() / ".cache" / "pyoptotrace")
 ).expanduser()
 
 
@@ -59,7 +59,7 @@ def to_scratch(archive_path: Path) -> Path:
     try:
         relative = Path(archive_path).resolve().relative_to(ARCHIVE_ROOT.resolve())
     except ValueError as exc:
-        raise ValueError(f"{archive_path} is outside LUMEMBRANE_ARCHIVE={ARCHIVE_ROOT}") from exc
+        raise ValueError(f"{archive_path} is outside PYOPTOTRACE_ARCHIVE={ARCHIVE_ROOT}") from exc
     return SCRATCH_ROOT / relative
 
 

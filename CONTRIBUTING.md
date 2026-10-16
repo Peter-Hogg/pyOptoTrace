@@ -1,6 +1,6 @@
 # Contributing
 
-Lumembrane is in an early extraction and validation phase. Small, test-backed changes are the
+pyOptoTrace is in an early extraction and validation phase. Small, test-backed changes are the
 easiest to review.
 
 ## Development setup

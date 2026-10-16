@@ -1,4 +1,4 @@
-"""Command-line entry points for Lumembrane."""
+"""Command-line entry points for pyOptoTrace."""
 
 from __future__ import annotations
 
@@ -52,7 +52,7 @@ def _run_demo(args: argparse.Namespace) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="lumembrane",
+        prog="pyoptotrace",
         description="Tools for functional fluorescence imaging analysis.",
     )
     parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
@@ -62,7 +62,7 @@ def build_parser() -> argparse.ArgumentParser:
     info.set_defaults(
         handler=lambda _args: (
             print(
-                f"Lumembrane {__version__}\n"
+                f"pyOptoTrace {__version__}\n"
                 "Movies use (time, y, x); traces use (time,); masks use (y, x)."
             )
             or 0
@@ -79,7 +79,7 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Run the Lumembrane command-line interface."""
+    """Run the pyOptoTrace command-line interface."""
     parser = build_parser()
     args = parser.parse_args(argv)
     return int(args.handler(args))

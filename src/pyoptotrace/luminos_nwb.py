@@ -60,7 +60,7 @@ OptogeneticStimulusSite = None
 def _require_h5py():
     if h5py is None:
         raise ModuleNotFoundError(
-            "Luminos metadata parsing requires the 'io' extra: pip install 'lumembrane[io]'"
+            "Luminos metadata parsing requires the 'io' extra: pip install 'pyoptotrace[io]'"
         )
 
 
@@ -80,7 +80,7 @@ def _require_nwb():
             from pynwb.ophys import OpticalChannel as _OpticalChannel
         except ImportError as exc:
             raise ModuleNotFoundError(
-                "NWB export requires the 'io' extra: pip install 'lumembrane[io]'"
+                "NWB export requires the 'io' extra: pip install 'pyoptotrace[io]'"
             ) from exc
 
         DynamicTable = _DynamicTable
@@ -95,7 +95,7 @@ def _require_nwb():
 def _require_yaml():
     if yaml is None:
         raise ModuleNotFoundError(
-            "Rig configuration requires the 'io' extra: pip install 'lumembrane[io]'"
+            "Rig configuration requires the 'io' extra: pip install 'pyoptotrace[io]'"
         )
 
 

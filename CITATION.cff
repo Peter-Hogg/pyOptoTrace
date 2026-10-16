@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "If you use Lumembrane, cite this software and the method papers relevant to your workflow."
-title: "Lumembrane"
+message: "If you use pyOptoTrace, cite this software and the method papers relevant to your workflow."
+title: "pyOptoTrace"
 abstract: "Python tools for functional fluorescence imaging analysis."
 type: software
 authors:

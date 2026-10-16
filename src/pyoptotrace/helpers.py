@@ -81,7 +81,7 @@ def add_scalebar(
     if ScaleBar is None:
         raise ModuleNotFoundError(
             "add_scalebar requires the 'visualization' extra: "
-            "pip install 'lumembrane[visualization]'"
+            "pip install 'pyoptotrace[visualization]'"
         )
     scalebar = ScaleBar(
         um_per_px,

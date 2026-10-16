@@ -1,0 +1,53 @@
+# Python environments and packaging
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Jupyter and IDE state
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Raw or derived scientific data
+data/
+results/
+outputs/
+scratch/
+*.bin
+*.csv
+*.h5
+*.hdf5
+*.mat
+*.npy
+*.npz
+*.nwb
+*.pkl
+*.pickle
+*.tif
+*.tiff
+*.zip
+
+# Generated media and figures
+*.avi
+*.mov
+*.mp4
+*.pdf
+*.png
+*.svg

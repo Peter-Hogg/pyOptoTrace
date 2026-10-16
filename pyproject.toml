@@ -1,0 +1,90 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lumembrane"
+version = "0.1.0a0"
+description = "From fluorescence movies to membrane-voltage traces."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Peter Hogg" },
+]
+keywords = [
+  "voltage imaging",
+  "fluorescence microscopy",
+  "neuroscience",
+  "signal processing",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [
+  "numpy>=1.26",
+  "scipy>=1.11",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+analysis = [
+  "pynapple>=0.8",
+  "PyWavelets>=1.5",
+]
+io = [
+  "h5py>=3.9",
+  "pandas>=2.1",
+  "pynwb>=2.5",
+  "PyYAML>=6.0",
+]
+visualization = [
+  "matplotlib>=3.8",
+  "matplotlib-scalebar>=0.8",
+  "opencv-python-headless>=4.8",
+]
+gpu = [
+  "cupy-cuda12x>=13",
+  "jax[cuda12]>=0.4.30",
+]
+motion = [
+  "jnormcorre>=1.0",
+  "torch>=2.2",
+]
+dev = [
+  "build>=1.2",
+  "pytest>=8",
+  "pytest-cov>=5",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+lumembrane = "lumembrane.cli:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+lumembrane = ["py.typed"]
+
+[tool.pytest.ini_options]
+addopts = "-ra --strict-config --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+ignore = ["E501"]

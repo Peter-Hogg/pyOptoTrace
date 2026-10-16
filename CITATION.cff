@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use Lumembrane, cite this software and the method papers relevant to your workflow."
+title: "Lumembrane"
+abstract: "Python tools for functional fluorescence imaging analysis."
+type: software
+authors:
+  - family-names: "Hogg"
+    given-names: "Peter"
+version: "0.1.0-alpha"
+license: MIT

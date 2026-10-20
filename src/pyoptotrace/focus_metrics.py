@@ -19,7 +19,7 @@ exclude the cell under study (use an annulus) so its own signal does not leak in
 A MATLAB port with the same defaults lives next to this file:
 focus_masks.m and laplacian_focus.m.
 """
-from typing import Dict, Iterable, Optional, Sequence, Tuple
+from collections.abc import Iterable
 
 import numpy as np
 from scipy.ndimage import binary_dilation
@@ -33,14 +33,14 @@ def laplacian2d(x: np.ndarray) -> np.ndarray:
 
 def focus_masks(
     proj: np.ndarray,
-    labels: Optional[np.ndarray] = None,
-    shifts: Optional[np.ndarray] = None,
-    roi_ids: Optional[Iterable[int]] = None,
+    labels: np.ndarray | None = None,
+    shifts: np.ndarray | None = None,
+    roi_ids: Iterable[int] | None = None,
     tissue_pct: float = 40,
     noncell_excl_px: int = 8,
-    annulus_px: Tuple[int, int] = (3, 15),
-    border_px: Optional[int] = None,
-) -> Tuple[Dict[str, np.ndarray], int]:
+    annulus_px: tuple[int, int] = (3, 15),
+    border_px: int | None = None,
+) -> tuple[dict[str, np.ndarray], int]:
     """Masks for `laplacian_focus`.
 
     Parameters
@@ -90,12 +90,12 @@ def focus_masks(
 
 def laplacian_focus(
     mov,
-    masks: Dict[str, np.ndarray],
+    masks: dict[str, np.ndarray],
     bin_frames: int = 10,
     debias: bool = True,
     chunk: int = 2000,
     relative: bool = True,
-) -> Dict[str, Dict[str, np.ndarray]]:
+) -> dict[str, dict[str, np.ndarray]]:
     """Laplacian-variance focus per mask, on bins of `bin_frames` frames.
 
     Parameters
